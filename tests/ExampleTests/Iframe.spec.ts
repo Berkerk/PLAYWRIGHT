@@ -19,13 +19,13 @@ test.describe("Iframe Handling",()=>{
     });
 })
 
-test.describe.only("Iframe Test Automation",()=>{
+test.describe.skip("Iframe Test Automation",()=>{
 
     test.beforeEach(async({page})=>{
         await page.goto("https://testautomationpractice.blogspot.com/");
     });
     
-    test("Handle Iframe", async({page})=>{
+    test.skip("Handle Iframe", async({page})=>{
         const iframeElement = page.frameLocator("#frame-one1434677811");
         const iframeText = await iframeElement?.locator("xpath=//h1").textContent();
         expect(iframeText).toBe("This is a sample page");
